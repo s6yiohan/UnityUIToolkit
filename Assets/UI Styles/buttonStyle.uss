@@ -1,0 +1,21 @@
+.buttonStyle {
+    height: 81px;
+    width: 194px;
+    font-size: 48px;
+    -unity-text-align: middle-center;
+    position: relative;
+    align-items: stretch;
+    justify-content: flex-start;
+    background-color: rgb(0, 3, 105);
+}
+
+.buttonStyle:hover {
+    height: 81px;
+    width: 194px;
+    font-size: 48px;
+    -unity-text-align: middle-center;
+    position: relative;
+    align-items: stretch;
+    justify-content: flex-start;
+    background-color: rgb(105, 74, 0);
+}
