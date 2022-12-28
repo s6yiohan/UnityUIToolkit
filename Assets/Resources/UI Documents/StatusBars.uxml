@@ -1,0 +1,7 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement name="StatusBar" style="height: 50px; width: 300px; align-items: stretch;">
+        <ui:VisualElement name="background" style="background-color: rgba(0, 0, 0, 0.61); height: 52px; flex-grow: 1;">
+            <ui:VisualElement name="foreground" style="background-color: rgb(255, 0, 0); height: 51px; transform-origin: left bottom;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

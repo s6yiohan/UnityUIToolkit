@@ -1,0 +1,6 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement name="screen" style="flex-grow: 1;">
+        <StatusBarBase name="HealthBar" value="1" height="16" fill-color="#FF0000FF" style="height: 68px; width: 312px; left: 2.5%; top: 5%;" />
+        <StatusBarBase name="ManaBar" value="1" height="16" fill-color="#0008FFFF" style="height: 68px; width: 312px; left: 2.5%; top: 8%;" />
+    </ui:VisualElement>
+</ui:UXML>
