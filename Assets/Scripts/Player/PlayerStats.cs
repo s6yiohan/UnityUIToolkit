@@ -27,7 +27,29 @@ public class PlayerStats : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        int damage = Random.Range(1,2);
+
+        if(Input.GetKeyDown(KeyCode.UpArrow)){
+            Heal(damage);
+        }
+
+        if(Input.GetKeyDown(KeyCode.DownArrow)){
+            TakeDamage(damage);
+        }
+    }
+
+    public void TakeDamage(int val){
+        currentHealth -= val;
+        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
+        healthPerc = (float) currentHealth / maxHealth;
+        healthBar.value = healthPerc;
+    }
+
+    public void Heal(int val){
+        currentHealth += val;
+        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
+        healthPerc = (float) currentHealth / maxHealth;
+        healthBar.value = healthPerc;
     }
 
     private void OnValidate() {

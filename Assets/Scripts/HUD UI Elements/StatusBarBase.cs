@@ -10,7 +10,7 @@ public class StatusBarBase : VisualElement, INotifyValueChanged<float>
     public int height{get;set;}
     public void SetValueWithoutNotify(float newValue)
     {
-        m_value=newValue;
+        m_value = newValue;
     }
 
     private float m_value;
