@@ -1,0 +1,5 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement name="ItemIconLayout" style="height: auto; width: auto; flex-direction: column-reverse; background-color: rgb(72, 72, 72); justify-content: space-between;">
+        <ui:VisualElement name="Icon" style="flex-direction: column-reverse; height: 104px; width: auto; justify-content: flex-start; align-items: auto;" />
+    </ui:VisualElement>
+</ui:UXML>

@@ -47,29 +47,29 @@ public class PlayerStats : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        int damage = Random.Range(1,20);
+        // int damage = Random.Range(1,20);
 
-        if(Input.GetKeyDown(KeyCode.UpArrow)){
-            Heal(damage);
-        }
+        // if(Input.GetKeyDown(KeyCode.UpArrow)){
+        //     Heal(damage);
+        // }
 
-        if(Input.GetKeyDown(KeyCode.DownArrow)){
-            TakeDamage(damage);
-        }
+        // if(Input.GetKeyDown(KeyCode.DownArrow)){
+        //     TakeDamage(damage);
+        // }
 
-        if(Input.GetKeyDown(KeyCode.LeftArrow)){
-            CastSpell(damage * 10);
-        }
+        // if(Input.GetKeyDown(KeyCode.LeftArrow)){
+        //     CastSpell(damage * 10);
+        // }
 
-        if(Input.GetKeyDown(KeyCode.RightArrow)){
-            GainExp(damage * 25);
-        }
+        // if(Input.GetKeyDown(KeyCode.RightArrow)){
+        //     GainExp(damage * 25);
+        // }
 
 
-        if(currentMana != maxMana)
-        {
-            RegenMana();
-        }
+        // if(currentMana != maxMana)
+        // {
+        //     RegenMana();
+        // }
     }
 
     private void OnValidate() {

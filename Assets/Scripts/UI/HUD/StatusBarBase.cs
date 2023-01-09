@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
+using UnityEngine.Scripting;
 
 public class StatusBarBase : VisualElement, INotifyValueChanged<float>
 {
@@ -54,6 +55,7 @@ public class StatusBarBase : VisualElement, INotifyValueChanged<float>
     private VisualElement sbBackground;
     private VisualElement sbForeground;
 
+    [Preserve]
     public new class UxmlFactory : UxmlFactory<StatusBarBase, UxmlTraits>{ }
 
     public new class UxmlTraits : VisualElement.UxmlTraits
@@ -81,7 +83,7 @@ public class StatusBarBase : VisualElement, INotifyValueChanged<float>
             ate.fillColor = m_fillColor.GetValueFromBag(bag, cc);
             
             ate.Clear();
-            VisualTreeAsset vt = Resources.Load<VisualTreeAsset>("UI Documents/StatusBars");
+            VisualTreeAsset vt = Resources.Load<VisualTreeAsset>("UI Documents/HUD/StatusBars");
             VisualElement statusBar = vt.Instantiate();
             ate.sbParent = statusBar.Q<VisualElement>("StatusBar");
             ate.sbBackground = statusBar.Q<VisualElement>("background");
@@ -93,13 +95,13 @@ public class StatusBarBase : VisualElement, INotifyValueChanged<float>
             ate.sbParent.style.height = ate.height;
             ate.style.width = ate.width;
             ate.style.height = ate.height;
-            ate.RegisterValueChangedCallback(ate.UpdateHealth); //Whenever the value gets changed invokes FillStatus
+            ate.RegisterValueChangedCallback(ate.UpdateValue); //Whenever the value gets changed invokes FillStatus
             ate.FillStatus();
 
         }
     }
 
-    public void UpdateHealth(ChangeEvent<float> evt){
+    public void UpdateValue(ChangeEvent<float> evt){
         FillStatus();
     }
 

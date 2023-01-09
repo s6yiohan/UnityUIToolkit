@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 414791427}
   - component: {fileID: 414791426}
   - component: {fileID: 414791425}
+  - component: {fileID: 414791429}
   - component: {fileID: 414791424}
   m_Layer: 0
   m_Name: Player
@@ -150,7 +151,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 414791423}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8e46a7aaca263bf45b0e1b7129dc2d7d, type: 3}
   m_Name: 
@@ -159,6 +160,12 @@ MonoBehaviour:
   currentHealth: 100
   maxHealth: 100
   healthPerc: 1
+  currentMana: 300
+  maxMana: 300
+  manaPerc: 1
+  currentExp: 0
+  maxExp: 15000
+  expPerc: 1
 --- !u!136 &414791425
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -238,6 +245,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &414791429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 414791423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2f6de593c0fb664c8ba082c8efedd9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventoryUI: {fileID: 0}
+  inventory: {fileID: 11400000, guid: 7677994f3faf0b34cb1a77cc1d84ca59, type: 2}
+  debugItem1: {fileID: 11400000, guid: 673c00d08d7057442b1e0e1ad37b8f87, type: 2}
+  debugItem2: {fileID: 0}
+  debugItem3: {fileID: 0}
+  debugItem4: {fileID: 0}
 --- !u!1 &913764996
 GameObject:
   m_ObjectHideFlags: 0
@@ -426,6 +451,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1314151898}
   - component: {fileID: 1314151897}
+  - component: {fileID: 1314151899}
   m_Layer: 5
   m_Name: HUD (UI Document)
   m_TagString: Untagged
@@ -447,7 +473,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_PanelSettings: {fileID: 11400000, guid: 2ea0b018dc427c94996670ef139250df, type: 2}
   m_ParentUI: {fileID: 0}
-  sourceAsset: {fileID: 9197481963319205126, guid: be491ce9191841246b5107cc68874b15, type: 3}
+  sourceAsset: {fileID: 9197481963319205126, guid: ff77880a4c9e80c46b9084a65bb174c3, type: 3}
   m_SortingOrder: 0
 --- !u!4 &1314151898
 Transform:
@@ -464,3 +490,16 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1314151899
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1314151896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed805cf2783c7d14990672f7b3be79d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventory: {fileID: 11400000, guid: 7677994f3faf0b34cb1a77cc1d84ca59, type: 2}
