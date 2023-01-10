@@ -7,10 +7,10 @@ using UnityEngine.Scripting;
 public class InventoryItemIcon : VisualElement
 {
     public Image icon;
-    public Label amountText;
     public ItemType type = 0;
     public ItemObject item;
     public int amount;
+    private Label amountText;
 
     public InventoryItemIcon (){
         
@@ -22,6 +22,8 @@ public class InventoryItemIcon : VisualElement
         icon.AddToClassList("slotIcon");
         amountText.AddToClassList("slotAmount");
         AddToClassList("slotContainer");
+
+        RegisterCallback<PointerDownEvent>(OnPointerDown);
     }
     
     //Sets the item icon from the ItemObject class and takes in the item ammount from the inventory scriptable object
@@ -30,15 +32,34 @@ public class InventoryItemIcon : VisualElement
         icon.image = item.itemIcon;
         type = p_item.type;
         amount = p_itemAmount;
+        
+        if(amount <= 0)
+        {
+           return; 
+        }
+
         amountText.text = p_itemAmount.ToString();
     }
 
-    public void DropItem(){
-        item = null;
+    private void OnPointerDown(PointerDownEvent evt)
+    {
+        if(type == ItemType.Default)
+        {
+            return;
+        }
+
+        //Not the left mouse button
+        if (evt.button != 0 )
+        {
+            return;
+        }
+
+        //Clear the image and text
         icon.image = null;
-        type = 0;
-        amount = 0;
         amountText.text = "";
+
+        //Start the drag
+        InventoryUIController.StartDrag(evt.position, this);
     }
 
     #region UXML

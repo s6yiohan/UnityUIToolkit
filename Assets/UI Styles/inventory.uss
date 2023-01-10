@@ -6,8 +6,8 @@
 }
 
 .slotContainer {
-    width: 86px;
-    height: 86px;
+    width: 128px;
+    height: 128px;
     margin: 5px;
     border-left-color: rgb(48, 48, 48);
     border-right-color: rgb(48, 48, 48);
@@ -24,15 +24,16 @@
     padding: 15px;
     flex-shrink: 0;
     flex-grow: 1;
-    flex-direction: row-reverse;
-    justify-content: flex-start;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-end;
 }
 
 .slotAmount{
     padding-top: 30px;
-    font-size: 15px;
+    font-size: 30px;
     -unity-font-style: bold;
     color: white;
-    -unity-text-outline-width: 1px;
+    -unity-text-outline-width: 2px;
     -unity-text-outline-color:  black;
 }

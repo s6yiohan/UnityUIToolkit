@@ -257,7 +257,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2f6de593c0fb664c8ba082c8efedd9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventoryUI: {fileID: 0}
   inventory: {fileID: 11400000, guid: 7677994f3faf0b34cb1a77cc1d84ca59, type: 2}
   debugItem1: {fileID: 11400000, guid: 673c00d08d7057442b1e0e1ad37b8f87, type: 2}
   debugItem2: {fileID: 0}
@@ -452,6 +451,7 @@ GameObject:
   - component: {fileID: 1314151898}
   - component: {fileID: 1314151897}
   - component: {fileID: 1314151899}
+  - component: {fileID: 1314151900}
   m_Layer: 5
   m_Name: HUD (UI Document)
   m_TagString: Untagged
@@ -503,3 +503,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventory: {fileID: 11400000, guid: 7677994f3faf0b34cb1a77cc1d84ca59, type: 2}
+  sourceAsset: {fileID: 9197481963319205126, guid: ff77880a4c9e80c46b9084a65bb174c3, type: 3}
+  defaultItemObject: {fileID: 11400000, guid: 600aa4ba87d93e943b7ba1b2b97b922d, type: 2}
+--- !u!114 &1314151900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1314151896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02a70f3b401de0f4aa1e5367a329ea35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sourceAsset: {fileID: 9197481963319205126, guid: be491ce9191841246b5107cc68874b15, type: 3}

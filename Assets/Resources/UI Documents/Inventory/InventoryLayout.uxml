@@ -5,6 +5,8 @@
             <ui:Label text="Inventory" display-tooltip-when-elided="true" name="Header" style="font-size: 24px; padding-bottom: 10px; border-bottom-color: rgb(55, 31, 26); border-left-width: 3px; border-right-width: 3px; border-top-width: 3px; border-bottom-width: 3px;" />
             <ui:VisualElement name="SlotContainer" style="flex-grow: 1; flex-direction: row; flex-wrap: wrap; justify-content: space-around;" />
         </ui:VisualElement>
-        <ui:VisualElement name="GhostIcon" style="position: absolute; width: 86px; height: 86px; visibility: hidden;" />
+        <ui:VisualElement name="GhostIcon" style="position: absolute; width: 128px; height: 128px; visibility: hidden; flex-direction: row; flex-grow: 1; justify-content: flex-end; align-items: flex-end;">
+            <ui:Label text="aaaaaaaaaaaaaaa" display-tooltip-when-elided="true" name="itemAmount" />
+        </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>
