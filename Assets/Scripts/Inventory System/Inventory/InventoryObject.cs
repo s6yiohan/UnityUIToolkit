@@ -5,7 +5,6 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Inventory", menuName = "Inventory System/Inventory")]
 public class InventoryObject : ScriptableObject
 {
-    public ItemObject defaultItemObject;
     public List<InventorySlot> Container = new List<InventorySlot>();
     
     //Adds item to the inventory 
@@ -30,23 +29,13 @@ public class InventoryObject : ScriptableObject
             if(Container[i].item == _item)
             {
                 if(Container[i].SubtractAmount(_amount) <= 0){
-                    Container[i] = new InventorySlot(defaultItemObject,0);
+                    Container.Remove(Container[i]);
                 }
 
             }
         }
     }
 
-    public void SetToEmptyObject(ItemObject _item)
-    {
-        for(int i=0; i < Container.Count; i++){
-            if(Container[i].item == _item)
-            {
-                Container[i] = new InventorySlot(defaultItemObject,0);
-
-            }
-        }
-    }
 }
 
 [System.Serializable]

@@ -5,21 +5,13 @@ using UnityEngine.UIElements;
 
 public class ToolbarInventoryUIController : MonoBehaviour
 {
-    public VisualTreeAsset sourceAsset;
-
     private VisualElement m_Root;
     private VisualElement m_SlotContainer;
     private bool isActiveAsset;
 
-    private void Awake() {
+    public void Load() {
         
         VisualTreeAsset vt = GetComponent<UIDocument>().visualTreeAsset;
-
-        if(vt != sourceAsset)
-        {
-            isActiveAsset = false;
-            return;
-        }
 
         m_Root = GetComponent<UIDocument>().rootVisualElement;        
         
@@ -27,7 +19,7 @@ public class ToolbarInventoryUIController : MonoBehaviour
 
         for (int i = 0; i < 8; i++)
         {
-            m_SlotContainer.Add(InventoryUIController.InventoryItems[i]);
+            m_SlotContainer.Add(InventoryUIContainer.Instance.InventoryItems[i]);
         }
     }
 }

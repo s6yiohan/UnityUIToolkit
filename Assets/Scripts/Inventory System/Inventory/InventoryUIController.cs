@@ -6,10 +6,8 @@ using UnityEngine.UIElements;
 
 public class InventoryUIController : MonoBehaviour
 {   
-    public InventoryObject inventory;
-    public static List<InventoryItemIcon> InventoryItems = new List<InventoryItemIcon>();
-    public VisualTreeAsset sourceAsset;
-    public ItemObject defaultItemObject;
+
+
     
     private VisualElement m_Root;
     private VisualElement m_SlotContainer;
@@ -21,25 +19,21 @@ public class InventoryUIController : MonoBehaviour
 
     private void Awake()
     {
-        VisualTreeAsset vt = GetComponent<UIDocument>().visualTreeAsset;
 
-        if(vt != sourceAsset)
-        {
-            isActiveAsset = false;
-            return;
-        }
+    }
+
+    public void Load(){
+        VisualTreeAsset vt = GetComponent<UIDocument>().visualTreeAsset;
 
         //Store the root from the UI Document component
         m_Root = GetComponent<UIDocument>().rootVisualElement;
         //Search the root for the SlotContainer Visual Element
         m_SlotContainer = m_Root.Q<VisualElement>("SlotContainer");
+        
         //Create InventorySlots and add them as children to the SlotContainer
-        for (int i = 0; i < inventory.Container.Count; i++)
+        foreach(InventoryItemIcon icon in InventoryUIContainer.Instance.InventoryItems)
         {
-            InventoryItemIcon item = new InventoryItemIcon();
-            item.HoldItem(inventory.Container[i].item, inventory.Container[i].amount);
-            InventoryItems.Add(item);
-            m_SlotContainer.Add(item);
+            m_SlotContainer.Add(icon);
         }
 
         m_GhostIcon = m_Root.Query<VisualElement>("GhostIcon");
@@ -90,7 +84,7 @@ public class InventoryUIController : MonoBehaviour
         }
         
         //Check to see if they are dropping the ghost icon over any inventory slots.
-        IEnumerable<InventoryItemIcon> slots = InventoryItems.Where(x => x.worldBound.Overlaps(m_GhostIcon.worldBound));
+        IEnumerable<InventoryItemIcon> slots = InventoryUIContainer.Instance.InventoryItems.Where(x => x.worldBound.Overlaps(m_GhostIcon.worldBound));
         
         //Found at least one
         if (slots.Count() != 0)
@@ -103,12 +97,7 @@ public class InventoryUIController : MonoBehaviour
             
             if(closestSlot != m_OriginalSlot)
             {
-
-                for (int i = 0; i < InventoryItems.Count; i++)
-                {
-                    inventory.SetToEmptyObject(m_OriginalSlot.item);  
-                }
-                m_OriginalSlot.HoldItem(defaultItemObject, 0);
+                m_OriginalSlot.ClearItemSlot();
             }
 
         }

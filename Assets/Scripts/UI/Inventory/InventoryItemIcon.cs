@@ -41,6 +41,14 @@ public class InventoryItemIcon : VisualElement
         amountText.text = p_itemAmount.ToString();
     }
 
+    public void ClearItemSlot()
+    {
+        item = null;
+        icon.image = null;
+        type = 0;
+        amount = 0;
+    }
+
     private void OnPointerDown(PointerDownEvent evt)
     {
         if(type == ItemType.Default)

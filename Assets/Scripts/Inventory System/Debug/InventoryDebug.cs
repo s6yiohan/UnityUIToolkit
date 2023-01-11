@@ -1,24 +1,29 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class InventoryDebug : MonoBehaviour
 {   
+    public UIDocument uiDoc;
     public InventoryObject inventory;
-    public ItemObject debugItem1;
-    public ItemObject debugItem2;
-    public ItemObject debugItem3;
-    public ItemObject debugItem4;
+    public VisualTreeAsset sourceAsset1;
+    public VisualTreeAsset sourceAsset2;
+    public InventoryUIController inventoryUI;
+    public ToolbarInventoryUIController toolbarInventoryUI;
     // Update is called once per frame
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.UpArrow)){
-            AddItemToInventory(debugItem1);
+            SetVTA(sourceAsset1);
+            toolbarInventoryUI.Load();
         }
 
-        // if(Input.GetKeyDown(KeyCode.DownArrow)){
-        //     TakeDamage(damage);
-        // }
+        if(Input.GetKeyDown(KeyCode.DownArrow)){
+            SetVTA(sourceAsset2);
+            inventoryUI.Load();
+            
+        }
 
         // if(Input.GetKeyDown(KeyCode.LeftArrow)){
         //     CastSpell(damage * 10);
@@ -32,6 +37,10 @@ public class InventoryDebug : MonoBehaviour
     private void AddItemToInventory(ItemObject _item){
         inventory.AddItem(_item,1);
 
+    }
+
+    private void SetVTA(VisualTreeAsset asset){
+        uiDoc.visualTreeAsset = asset;
     }
 
 }
