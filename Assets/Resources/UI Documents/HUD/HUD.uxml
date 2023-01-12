@@ -1,4 +1,5 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Styles/inventory.uss?fileID=7433441132597879392&amp;guid=93afce6ad7d8acb4daa4e1cec104e051&amp;type=3#inventory" />
     <ui:VisualElement name="screen" style="flex-grow: 2; height: 333px; align-items: flex-start; justify-content: space-between;">
         <ui:VisualElement name="TopBars" style="height: 95px; width: 367px;">
             <StatusBarBase name="ManaBar" value="1" height="16" fill-color="#0008FFFF" style="height: 68px; width: 312px; left: 3%; top: 53%;" />

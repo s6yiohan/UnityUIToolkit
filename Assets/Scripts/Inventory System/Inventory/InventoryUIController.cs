@@ -92,10 +92,22 @@ public class InventoryUIController : MonoBehaviour
             InventoryItemIcon closestSlot = slots.OrderBy(x => Vector2.Distance
             (x.worldBound.position, m_GhostIcon.worldBound.position)).First();
             
+            //Used to hold the data temporarily to accomodate switching
+            ItemObject tempItem = m_OriginalSlot.item;
+            int tempAmount = m_OriginalSlot.amount;
+
+            bool isSwitched = false;
+            //If closest slot is occupied, it transfers the contents to the original slot
+            if(closestSlot.item != null)
+            {
+                m_OriginalSlot.HoldItem(closestSlot.item, closestSlot.amount);
+                isSwitched = true;
+            }
+
             //Set the new inventory slot with the data
-            closestSlot.HoldItem(m_OriginalSlot.item, m_OriginalSlot.amount);
+            closestSlot.HoldItem(tempItem, tempAmount);
             
-            if(closestSlot != m_OriginalSlot)
+            if(closestSlot != m_OriginalSlot && !isSwitched)
             {
                 m_OriginalSlot.ClearItemSlot();
             }
