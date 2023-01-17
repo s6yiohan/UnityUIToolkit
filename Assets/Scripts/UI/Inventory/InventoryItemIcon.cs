@@ -10,7 +10,7 @@ public class InventoryItemIcon : VisualElement
     public ItemType type = 0;
     public ItemObject item;
     public int amount;
-    private Label amountText;
+    protected Label amountText;
 
     public InventoryItemIcon (){
         
@@ -29,7 +29,7 @@ public class InventoryItemIcon : VisualElement
     //Sets the item icon from the ItemObject class and takes in the item ammount from the inventory scriptable object
     public void HoldItem(ItemObject p_item, int p_itemAmount){
         item = p_item;
-        icon.image = item.itemIcon;
+        icon.image = p_item.itemIcon;
         type = p_item.type;
         amount = p_itemAmount;
         
@@ -49,7 +49,7 @@ public class InventoryItemIcon : VisualElement
         amount = 0;
     }
 
-    private void OnPointerDown(PointerDownEvent evt)
+    protected virtual void OnPointerDown(PointerDownEvent evt)
     {
         if(type == ItemType.Default)
         {

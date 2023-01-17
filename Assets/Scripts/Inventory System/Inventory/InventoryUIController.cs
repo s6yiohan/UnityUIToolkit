@@ -43,7 +43,7 @@ public class InventoryUIController : MonoBehaviour
 
     public static void StartDrag(Vector2 position, InventoryItemIcon originalSlot)
     {
-        if(originalSlot.item.type == ItemType.Default)
+        if(originalSlot.item == null || originalSlot.item.type == ItemType.Default)
         {
             return;
         }
